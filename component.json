@@ -1,0 +1,19 @@
+{
+  "name": "search",
+  "repo": "yields/search",
+  "description": "list input search.",
+  "version": "0.0.1",
+  "keywords": ["classes", "keyword"],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": ["index.js"],
+  "dependencies": {
+    "component/events": "*",
+    "component/classes": "*",
+    "component/map": "*"
+  },
+  "development": {
+    "component/countries": "*",
+    "component/each": "*"
+  }
+}

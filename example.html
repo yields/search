@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>search</title>
+    <script src='build/build.js'></script>
+    <style>
+      .hide { display: none; }
+      .show { display: list-item; }
+    </style>
+  </head>
+  <body>
+    <input type='text' placeholder='search stuff...'>
+
+    <div id='items'>
+    </div>
+
+    <script>
+      var input = document.getElementsByTagName('input')[0];
+      var items = document.getElementById('items');
+      var InputSearch = require('search');
+      var countries = require('countries');
+      var each = require('each');
+
+      // search
+      var search = new InputSearch(input);
+
+      // add lists
+      search
+      .add(create(countries))
+
+      // create a list
+      function create(arr){
+        var ul = document.createElement('ul');
+        each(arr, function(str){
+          var li = document.createElement('li');
+          li.textContent = str.name;
+          ul.appendChild(li);
+        });
+        items.appendChild(ul);
+        return ul;
+      }
+    </script>
+  </body>
+</html>
